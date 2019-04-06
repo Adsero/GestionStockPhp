@@ -11,7 +11,7 @@
 	$result=mysqli_query($con,$req);
 
 	if($result === FALSE) { 
-	    die(mysqli_error()); // TODO: better error handling
+	    die(mysqli_error($con)); // TODO: better error handling
 	}
 
 
