@@ -1,0 +1,57 @@
+<?php
+
+	$latitude = $_GET['lat']; // 33.829262
+	$longitude = $_GET['lng']; // -4.839340
+	
+
+	$user="root";
+	$password="";
+	$host="localhost";
+	$db_name="AndroidGestionS";
+
+	$con=mysqli_connect($host,$user,$password,$db_name);
+	$req="SELECT p.*, m.emplacement_geo, m.zone_detection FROM Produit p, Magasin m WHERE p.magasin=m.id_magasin;";
+	
+	$result=mysqli_query($con,$req);
+	$tableau=array();
+
+	while($ligne=mysqli_fetch_assoc($result))
+	{
+		$tableau[]=$ligne; 
+	}
+
+	// echo json_encode($tableau);
+   
+	mysqli_close($con);
+
+	function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+
+		$theta = $lon1 - $lon2;
+		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+		$dist = acos($dist);
+		$dist = rad2deg($dist);
+		$miles = $dist * 60 * 1.1515;
+		$unit = strtoupper($unit);
+
+		if ($unit == "K") {
+			return ($miles * 1.609344);
+		} else if ($unit == "N") {
+			return ($miles * 0.8684);
+		} else {
+			return $miles;
+		}
+	}
+
+	$nearby = [];
+	foreach ($tableau as $element) {
+		$lat = explode(",", $element['emplacement_geo'])[0];
+		$lng = explode(",", $element['emplacement_geo'])[1];
+		if (distance($lat, $lng, $latitude, $longitude, 'K') < $element['zone_detection']) {
+			$nearby[] = $element;
+		}
+		// echo "The distance between " . $lat . "," . $lng . " and " . $latitude . "," . $longitude . " is " . distance($lat, $lng, $latitude, $longitude, 'K');
+	}
+	echo json_encode($nearby);
+
+
+?>
