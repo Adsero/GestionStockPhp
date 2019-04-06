@@ -10,9 +10,10 @@
 	
 	$result=mysqli_query($con,$req);
 
-	if (! $result){
-	   throw new My_Db_Exception('Database error: ' . mysql_error());
+	if($result === FALSE) { 
+	    die(mysql_error()); // TODO: better error handling
 	}
+
 
 	$tableau=array();
 
