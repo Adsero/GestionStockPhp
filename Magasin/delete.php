@@ -4,14 +4,14 @@
 
   $id=$_GET["id"];
 
-  $user="root";
-  $password="";
-  $host="localhost";
-  $db_name="AndroidGestions";
+  $user="8jgfY7gyWT";
+  $password="Nbpd6K16n4";
+  $host="remotemysql.com";
+  $db_name="8jgfY7gyWT";
 
   $con=mysqli_connect($host,$user,$password,$db_name);
 
-  $req="SELECT * FROM Magasin WHERE id_magasin=$id;";
+  $req="SELECT * FROM magasin WHERE id_magasin=$id;";
   
   $result=mysqli_query($con,$req);
   $tableau=array();

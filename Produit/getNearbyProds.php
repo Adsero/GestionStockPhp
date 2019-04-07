@@ -4,13 +4,13 @@
 	$longitude = $_GET['lng']; // -4.839340
 	
 
-	$user="root";
-	$password="";
-	$host="localhost";
-	$db_name="AndroidGestionS";
+	$user="8jgfY7gyWT";
+	$password="Nbpd6K16n4";
+	$host="remotemysql.com";
+	$db_name="8jgfY7gyWT";
 
 	$con=mysqli_connect($host,$user,$password,$db_name);
-	$req="SELECT p.*, m.emplacement_geo, m.zone_detection FROM Produit p, Magasin m WHERE p.magasin=m.id_magasin;";
+	$req="SELECT p.*, m.emplacement_geo, m.zone_detection FROM produit p, magasin m WHERE p.magasin=m.id_magasin;";
 	
 	$result=mysqli_query($con,$req);
 	$tableau=array();

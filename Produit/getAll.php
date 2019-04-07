@@ -6,7 +6,7 @@
 	$db_name="8jgfY7gyWT";
 
 	$con=mysqli_connect($host,$user,$password,$db_name);
-	$req="SELECT * FROM Produit;";
+	$req="SELECT * FROM produit;";
 	
 	$result=mysqli_query($con,$req);
 

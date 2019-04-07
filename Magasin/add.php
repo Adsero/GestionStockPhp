@@ -5,16 +5,16 @@
    $geo=$_POST["geo"];
    $owner=$_POST["owner"];
 
-   $user="root";
-   $password="";
-   $host="localhost";
-   $db_name="AndroidGestionS";
+   $user="8jgfY7gyWT";
+   $password="Nbpd6K16n4";
+   $host="remotemysql.com";
+   $db_name="8jgfY7gyWT";
 
    $con=mysqli_connect($host,$user,$password,$db_name);
 
    $image_name = round(microtime(true) * 1000) . ".jpg";
 
-   $req="INSERT INTO Magasin(libelle, logo, emplacement_geo, proprietaire) VALUES ('".$name."', '".$image_name."', '". $geo ."', ".$owner.")";
+   $req="INSERT INTO magasin(libelle, logo, emplacement_geo, proprietaire) VALUES ('".$name."', '".$image_name."', '". $geo ."', ".$owner.")";
 
    if(mysqli_query($con,$req)) {
       // Image Upload

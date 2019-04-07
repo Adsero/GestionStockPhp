@@ -2,13 +2,13 @@
 
   $id=$_GET["id"];
 
-  $user="root";
-  $password="";
-  $host="localhost";
-  $db_name="AndroidGestions";
+  $user="8jgfY7gyWT";
+  $password="Nbpd6K16n4";
+  $host="remotemysql.com";
+  $db_name="8jgfY7gyWT";
 
   $con=mysqli_connect($host,$user,$password,$db_name);
-  $req="DELETE FROM Produit WHERE id='".$id."';";
+  $req="DELETE FROM produit WHERE id='".$id."';";
 
   if(mysqli_query($con,$req))
     echo 0;

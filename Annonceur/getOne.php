@@ -2,13 +2,13 @@
 
    $id=$_GET["id"];
    
-   $user="root";
-   $password="";
-   $host="localhost";
-   $db_name="AndroidGestionS";
+   $user="8jgfY7gyWT";
+   $password="Nbpd6K16n4";
+   $host="remotemysql.com";
+   $db_name="8jgfY7gyWT";
 
    $con=mysqli_connect($host,$user,$password,$db_name);
-   $req="SELECT * FROM Annonceur WHERE id='".$id."';";
+   $req="SELECT * FROM annonceur WHERE id='".$id."';";
    
    $result=mysqli_query($con,$req);
    $tableau=array();

@@ -3,13 +3,13 @@
    $login=$_GET["login"];
    $pass=$_GET["pass"];
    
-   $user="root";
-   $password="";
-   $host="localhost";
-   $db_name="AndroidGestionS";
+   $user="8jgfY7gyWT";
+   $password="Nbpd6K16n4";
+   $host="remotemysql.com";
+   $db_name="8jgfY7gyWT";
 
    $con=mysqli_connect($host,$user,$password,$db_name);
-   $req="SELECT * FROM Annonceur WHERE login='".$login."' AND pass='".$pass."';";
+   $req="SELECT * FROM annonceur WHERE login='".$login."' AND pass='".$pass."';";
    
    $result=mysqli_query($con,$req);
    $tableau=array();

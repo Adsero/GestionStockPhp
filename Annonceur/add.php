@@ -8,14 +8,14 @@
    $pass=$_GET["pass"];
 	
    
-   $user="root";
-   $password="";
-   $host="localhost";
-   $db_name="AndroidGestionS";
+   $user="8jgfY7gyWT";
+   $password="Nbpd6K16n4";
+   $host="remotemysql.com";
+   $db_name="8jgfY7gyWT";
    
    
    $con=mysqli_connect($host,$user,$password,$db_name);
-   $req="INSERT INTO Annonceur(nom, prenom, date_naiss, login, pass) VALUES ('".$name."','".$lastname."','".$date_naiss."','".$login."','".$pass."');";
+   $req="INSERT INTO annonceur(nom, prenom, date_naiss, login, pass) VALUES ('".$name."','".$lastname."','".$date_naiss."','".$login."','".$pass."');";
    
    if(mysqli_query($con,$req))
       echo mysqli_insert_id($con);
