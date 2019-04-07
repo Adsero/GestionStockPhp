@@ -17,7 +17,7 @@
    $image_name = round(microtime(true) * 1000) . ".jpg";
 
    // Get the id of the store
-	$req="SELECT id_magasin FROM magasin WHERE proprietaire = 132;";
+	$req="SELECT id_magasin FROM magasin WHERE proprietaire = $annonceur_id;";
 
 	$result=mysqli_query($con,$req);
 	$tableau=array();
